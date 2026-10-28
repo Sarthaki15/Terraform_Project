@@ -12,9 +12,9 @@ terraform {
 provider "aws" {}
 
 provider "datadog" {
-  api_key = "79bc0012e38ff36e7048203fd1a9311a"
-  app_key = "ddapp_FL2jnmMfz4H5y1PPmyifdvaKmKiA0hhuaQ"
-  api_url = "https://api.datadoghq.com"
+  api_key = "your_datadog_api_key"
+  app_key = "your_datadog_app_key"
+  api_url = "datadog_url"
 }
 
 data "aws_iam_policy_document" "datadog_aws_integration_assume_role" {
@@ -97,7 +97,7 @@ resource "aws_iam_role_policy_attachment" "datadog_aws_integration_security_audi
 
 resource "datadog_integration_aws_account" "datadog_integration" {
   account_tags   = []
-  aws_account_id = "543525762244"
+  aws_account_id = "your_aws_account_id"
   aws_partition  = "aws"
   aws_regions {
     include_all = true
