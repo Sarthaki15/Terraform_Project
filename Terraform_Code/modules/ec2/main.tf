@@ -16,8 +16,8 @@ resource "aws_instance" "my_instance" {
                 sudo systemctl start docker
                 sudo systemctl enable docker
                 sudo apt install -y fontconfig openjdk-21-jre
-                DD_API_KEY=79bc0012e38ff36e7048203fd1a9311a \
-                DD_SITE="datadoghq.com" \
+                DD_API_KEY=<your_datadog_api_key> \
+                DD_SITE="<your_datadog_site>" \
                 bash -c "$(curl -L https://install.datadoghq.com/scripts/install_script_agent7.sh)"
             EOF
 }
